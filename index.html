@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillTracer</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f7f9fc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 24px 50px;
+      background: linear-gradient(135deg, #eef4ff, #f9fbff);
+    }
+    h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #1e3a8a;
+    }
+    .authors {
+      font-size: 20px;
+      color: #2563eb;
+      margin-bottom: 12px;
+    }
+    .affiliations {
+      color: #4b5563;
+      margin-bottom: 24px;
+    }
+    .venue {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 28px;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 6px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #1e3a8a;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .buttons a.secondary {
+      background: white;
+      color: #1e3a8a;
+      border: 1px solid #c7d2fe;
+    }
+    section {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 42px 24px;
+    }
+    h2 {
+      color: #111827;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 18px;
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>SkillTracer: Structural Failure Attribution and Refinement of Agentic Skills in Long-Horizon Web Tasks</h1>
 
+    <div class="authors">
+      Yuyang Li, Yiran Dou, Jie-Jing Shao, Yueming Lyu, Ivor Tsang, Haiyan Yin
+    </div>
+
+    <div class="affiliations">
+      CFAR & IHPC, A*STAR · National University of Singapore · Nanjing University · Nanyang Technological University
+    </div>
+
+    <div class="venue">KDD 2026</div>
+
+    <div class="buttons">
+      <a href="#" class="secondary">Paper Coming Soon</a>
+      <a href="#bibtex" class="secondary">BibTeX</a>
+      <a href="#" class="secondary">Code Coming Soon</a>
+    </div>
+  </div>
+
+  <section id="abstract">
+    <h2>Abstract</h2>
+    <p>
+      SkillTracer is a framework for long-horizon web agents that represents reusable skills as hierarchical, attributed plan graphs.
+      Instead of treating skills as opaque action sequences, SkillTracer enables structural failure attribution, localized repair, and
+      verification-aware recovery during web task execution.
+    </p>
+  </section>
+
+  <section id="method">
+    <h2>Method</h2>
+    <p>
+      SkillTracer decomposes agentic skills into explicit plan nodes, executable actions, component-level grounding, and state-dependent
+      transition conditions. When execution fails, the system localizes the failure to specific graph nodes and performs targeted repair
+      without restarting the entire task.
+    </p>
+  </section>
+
+  <section id="experiments">
+    <h2>Experiments</h2>
+    <p>
+      We evaluate SkillTracer on long-horizon web automation tasks and show that structured skill representations improve robustness,
+      repairability, and cross-domain generalization.
+    </p>
+  </section>
+
+  <section id="bibtex">
+    <h2>BibTeX</h2>
+    <pre>@inproceedings{li2026skilltracer,
+  title     = {SkillTracer: Structural Failure Attribution and Refinement of Agentic Skills in Long-Horizon Web Tasks},
+  author    = {Li, Yuyang and Dou, Yiran and Shao, Jie-Jing and Lyu, Yueming and Tsang, Ivor and Yin, Haiyan},
+  booktitle = {Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  year      = {2026}
+}</pre>
+  </section>
+</body>
+</html>
