@@ -3,84 +3,281 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>SkillTracer</title>
+
   <style>
+    :root {
+      --primary: #26457a;
+      --primary-dark: #1e3561;
+      --accent: #9a6247;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --border: #dbe3ef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       margin: 0;
-      background: #f7f9fc;
-      color: #1f2937;
-      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
-    .hero {
-      text-align: center;
-      padding: 80px 24px 50px;
-      background: linear-gradient(135deg, #eef4ff, #f9fbff);
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
-    h1 {
-      font-size: 46px;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      color: #1e3a8a;
-    }
-    .authors {
-      font-size: 20px;
-      color: #2563eb;
-      margin-bottom: 12px;
-    }
-    .affiliations {
-      color: #4b5563;
-      margin-bottom: 24px;
-    }
-    .venue {
-      font-weight: 700;
-      font-size: 20px;
-      margin-bottom: 28px;
-    }
-    .buttons a {
-      display: inline-block;
-      margin: 6px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: #1e3a8a;
-      color: white;
-      text-decoration: none;
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
       font-weight: 600;
     }
+
+    .nav-inner a {
+      color: #374151;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .nav-inner a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 24px 56px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(71, 104, 173, 0.12), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(154, 98, 71, 0.10), transparent 32%),
+        linear-gradient(135deg, #eef4ff, #f9fbff);
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0 auto 24px;
+      font-size: 44px;
+      line-height: 1.16;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .authors {
+      max-width: 980px;
+      margin: 0 auto 12px;
+      font-size: 19px;
+      color: #2563eb;
+    }
+
+    .authors span {
+      white-space: nowrap;
+    }
+
+    .affiliations {
+      margin: 0 auto 24px;
+      color: #374151;
+      font-size: 16px;
+    }
+
+    .venue {
+      font-weight: 800;
+      font-size: 22px;
+      color: #334155;
+      margin: 22px 0 28px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 46px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(38, 69, 122, 0.18);
+    }
+
     .buttons a.secondary {
       background: white;
-      color: #1e3a8a;
-      border: 1px solid #c7d2fe;
+      color: var(--primary);
+      border: 1px solid #c8d4ea;
+      box-shadow: none;
     }
+
+    .teaser {
+      max-width: 980px;
+      margin: 0 auto 24px;
+      padding: 18px;
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(31, 41, 55, 0.13);
+    }
+
+    .teaser img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .teaser-caption {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+      font-size: 19px;
+      color: #374151;
+      text-align: center;
+      line-height: 1.7;
+    }
+
     section {
       max-width: 980px;
       margin: 0 auto;
-      padding: 42px 24px;
+      padding: 46px 24px;
     }
+
     h2 {
+      margin: 0 0 18px;
       color: #111827;
+      font-size: 30px;
       border-bottom: 2px solid #e5e7eb;
       padding-bottom: 8px;
     }
+
+    p {
+      font-size: 17px;
+      margin: 0 0 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 24px rgba(31, 41, 55, 0.06);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 19px;
+    }
+
+    .card p {
+      font-size: 15.5px;
+      color: var(--muted);
+    }
+
     pre {
       background: #111827;
       color: #f9fafb;
-      padding: 18px;
-      border-radius: 12px;
+      padding: 20px;
+      border-radius: 14px;
       overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 34px 24px 46px;
+      color: #6b7280;
+      border-top: 1px solid var(--border);
+      margin-top: 24px;
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        gap: 16px;
+        overflow-x: auto;
+        justify-content: flex-start;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .teaser {
+        padding: 10px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="hero">
+  <nav>
+    <div class="nav-inner">
+      <a href="#abstract">Abstract</a>
+      <a href="#method">Method</a>
+      <a href="#experiments">Experiments</a>
+      <a href="#bibtex">BibTeX</a>
+      <a href="#updates">Updates</a>
+    </div>
+  </nav>
+
+  <header class="hero">
     <h1>SkillTracer: Structural Failure Attribution and Refinement of Agentic Skills in Long-Horizon Web Tasks</h1>
 
+    <p class="subtitle">
+      A verification-aware framework for representing, diagnosing, and repairing reusable web-agent skills.
+    </p>
+
     <div class="authors">
-      Yuyang Li, Yiran Dou, Jie-Jing Shao, Yueming Lyu, Ivor Tsang, Haiyan Yin
+      <span>Yuyang Li</span>,
+      <span>Yiran Dou</span>,
+      <span>Jie-Jing Shao</span>,
+      <span>Yueming Lyu</span>,
+      <span>Ivor Tsang</span>,
+      <span>Haiyan Yin</span>
     </div>
 
     <div class="affiliations">
-      CFAR & IHPC, A*STAR · National University of Singapore · Nanjing University · Nanyang Technological University
+      CFAR &amp; IHPC, A*STAR · National University of Singapore · Nanjing University · Nanyang Technological University
     </div>
 
     <div class="venue">KDD 2026</div>
@@ -90,31 +287,64 @@
       <a href="#bibtex" class="secondary">BibTeX</a>
       <a href="#" class="secondary">Code Coming Soon</a>
     </div>
-  </div>
+
+    <div class="teaser">
+      <img src="overview.png" alt="Overview of SkillTracer">
+    </div>
+
+    <p class="teaser-caption">
+      SkillTracer turns web-agent skill reuse into a verification-aware control process.
+      It localizes execution failures to specific plan-graph nodes, repairs only the erroneous structure,
+      and preserves valid interaction progress for robust long-horizon web automation.
+    </p>
+  </header>
 
   <section id="abstract">
     <h2>Abstract</h2>
     <p>
-      SkillTracer is a framework for long-horizon web agents that represents reusable skills as hierarchical, attributed plan graphs.
-      Instead of treating skills as opaque action sequences, SkillTracer enables structural failure attribution, localized repair, and
-      verification-aware recovery during web task execution.
+      Large language model agents have shown promising capabilities in web automation, yet long-horizon tasks remain fragile because
+      execution errors can accumulate, obscure their causes, and force agents into repeated trial-and-error. SkillTracer addresses this
+      challenge by representing reusable web-agent skills as hierarchical, attributed plan graphs rather than opaque action sequences.
+      Each skill exposes its internal structure, including intent, component type, executable action, semantic description, and
+      verifiable transition conditions.
+    </p>
+    <p>
+      When a skill fails, SkillTracer attributes the failure to concrete graph nodes and performs localized structural repair, allowing
+      the agent to preserve valid interaction progress instead of restarting from scratch. This design enables more robust skill reuse,
+      failure diagnosis, and cross-domain generalization in long-horizon web environments.
     </p>
   </section>
 
   <section id="method">
     <h2>Method</h2>
-    <p>
-      SkillTracer decomposes agentic skills into explicit plan nodes, executable actions, component-level grounding, and state-dependent
-      transition conditions. When execution fails, the system localizes the failure to specific graph nodes and performs targeted repair
-      without restarting the entire task.
-    </p>
+    <div class="grid">
+      <div class="card">
+        <h3>Structured Skill Graphs</h3>
+        <p>
+          Skills are represented as hierarchical plan graphs with explicit node attributes and state-dependent transition conditions.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Failure Attribution</h3>
+        <p>
+          Execution failures are localized to specific intents, components, actions, or semantic descriptions using verification evidence.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Localized Repair</h3>
+        <p>
+          SkillTracer repairs only the erroneous structure and resumes execution from the preserved valid prefix.
+        </p>
+      </div>
+    </div>
   </section>
 
   <section id="experiments">
     <h2>Experiments</h2>
     <p>
-      We evaluate SkillTracer on long-horizon web automation tasks and show that structured skill representations improve robustness,
-      repairability, and cross-domain generalization.
+      We evaluate SkillTracer on long-horizon web automation tasks across WebArena domains. The results show that structured skill
+      representations improve robustness, repairability, and execution stability, especially in tasks requiring precise tool understanding
+      and state verification.
     </p>
   </section>
 
@@ -127,5 +357,16 @@
   year      = {2026}
 }</pre>
   </section>
+
+  <section id="updates">
+    <h2>Updates</h2>
+    <p>
+      Paper, supplementary materials, and implementation updates will be added to this page.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 SkillTracer. Project page for the KDD 2026 paper.
+  </footer>
 </body>
 </html>
