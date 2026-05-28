@@ -161,7 +161,7 @@
     }
 
     section {
-      max-width: 980px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 46px 24px;
     }
@@ -177,6 +177,98 @@
     p {
       font-size: 17px;
       margin: 0 0 16px;
+    }
+
+    .wide-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      margin: 28px 0 34px;
+      box-shadow: 0 14px 34px rgba(31, 41, 55, 0.08);
+    }
+
+    .wide-panel h3 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      line-height: 1.2;
+      color: var(--primary);
+    }
+
+    .panel-intro {
+      max-width: 980px;
+      font-size: 17px;
+      color: #374151;
+      margin-bottom: 24px;
+    }
+
+    .method-panel {
+      border-top: 5px solid var(--primary);
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .method-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .method-card h4 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      color: var(--primary-dark);
+    }
+
+    .method-card p {
+      margin: 0;
+      font-size: 15.5px;
+      color: var(--muted);
+    }
+
+    .case-panel {
+      border-top: 5px solid var(--accent);
+    }
+
+    .case-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .case-image {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 10px 24px rgba(31, 41, 55, 0.06);
+    }
+
+    .case-image img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .case-text p {
+      font-size: 16.5px;
+      color: #374151;
+      margin-bottom: 16px;
+    }
+
+    .case-text code {
+      background: #eef2ff;
+      color: #1e3a8a;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-size: 0.92em;
     }
 
     .grid {
@@ -238,12 +330,18 @@
         font-size: 18px;
       }
 
-      .grid {
+      .grid,
+      .method-grid,
+      .case-layout {
         grid-template-columns: 1fr;
       }
 
       .teaser {
         padding: 10px;
+      }
+
+      .wide-panel {
+        padding: 22px;
       }
     }
   </style>
@@ -318,24 +416,69 @@
 
   <section id="method">
     <h2>Method</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Structured Skill Graphs</h3>
-        <p>
-          Skills are represented as hierarchical plan graphs with explicit node attributes and state-dependent transition conditions.
-        </p>
+
+    <div class="wide-panel method-panel">
+      <h3>Methodology</h3>
+      <p class="panel-intro">
+        SkillTracer converts reusable web-agent skills into structured, verifiable plan graphs.
+        Instead of treating a skill as an opaque action sequence, it exposes the internal decision structure,
+        localizes execution failures to concrete graph components, and performs targeted repair while preserving valid progress.
+      </p>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <h4>Structured Skill Graphs</h4>
+          <p>
+            Skills are represented as hierarchical plan graphs with explicit node attributes,
+            executable actions, and state-dependent transition conditions.
+          </p>
+        </div>
+
+        <div class="method-card">
+          <h4>Failure Attribution</h4>
+          <p>
+            Execution failures are traced to specific intents, components, actions, or semantic descriptions
+            using verification evidence from page observations.
+          </p>
+        </div>
+
+        <div class="method-card">
+          <h4>Localized Repair</h4>
+          <p>
+            SkillTracer repairs only the erroneous structure and resumes execution from the preserved valid prefix,
+            avoiding unnecessary global re-planning.
+          </p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Failure Attribution</h3>
-        <p>
-          Execution failures are localized to specific intents, components, actions, or semantic descriptions using verification evidence.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Localized Repair</h3>
-        <p>
-          SkillTracer repairs only the erroneous structure and resumes execution from the preserved valid prefix.
-        </p>
+    </div>
+
+    <div class="wide-panel case-panel">
+      <h3>Case Study</h3>
+
+      <div class="case-layout">
+        <div class="case-image">
+          <img src="case_study.png" alt="Case study of an address-editing skill graph">
+        </div>
+
+        <div class="case-text">
+          <p>
+            This case study shows an address-editing skill induced from successful form-filling trajectories.
+            The skill is represented as a six-node plan graph, where each node specifies its intent,
+            target component type, executable action, and semantic description.
+          </p>
+
+          <p>
+            The transition from postal-code filling to state selection is guarded by a verifiable condition:
+            the page should expose a <code>combobox</code> component. If the target website instead implements
+            this field as a <code>textbox</code>, SkillTracer localizes the mismatch to the state-selection node
+            rather than discarding the entire skill.
+          </p>
+
+          <p>
+            The valid prefix is preserved, the failed node is repaired, and execution resumes after re-verification.
+            This illustrates how SkillTracer enables partial skill reuse and robust cross-site generalization.
+          </p>
+        </div>
       </div>
     </div>
   </section>
