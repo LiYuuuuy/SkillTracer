@@ -302,16 +302,17 @@
   <section id="abstract">
     <h2>Abstract</h2>
     <p>
-      Large language model agents have shown promising capabilities in web automation, yet long-horizon tasks remain fragile because
-      execution errors can accumulate, obscure their causes, and force agents into repeated trial-and-error. SkillTracer addresses this
-      challenge by representing reusable web-agent skills as hierarchical, attributed plan graphs rather than opaque action sequences.
-      Each skill exposes its internal structure, including intent, component type, executable action, semantic description, and
-      verifiable transition conditions.
+      Long-horizon web agents frequently fail without knowing where or why execution broke down.
+      This issue is particularly pronounced in skill-based agentic web systems, where failures arise within composite skills whose internal decision processes are not directly traceable, making precise diagnosis and repair especially difficult over long horizons.
+      We introduce <strong>SkillTracer</strong>, a framework that represents skills as attributed plan graphs structured by hierarchical nodes and verifiable edge transitions, enabling programmatic verification of execution progress.
     </p>
     <p>
-      When a skill fails, SkillTracer attributes the failure to concrete graph nodes and performs localized structural repair, allowing
-      the agent to preserve valid interaction progress instead of restarting from scratch. This design enables more robust skill reuse,
-      failure diagnosis, and cross-domain generalization in long-horizon web environments.
+      By decomposing skills into inspectable hierarchies, SkillTracer converts raw interaction traces into structural evidence, making execution breakdowns localizable to specific node-level decision points and attributable to failing components.
+      This attribution signal facilitates targeted structural repair, allowing the agent to selectively revise failing components while preserving the integrity of valid substructures for partial reuse and adaptive recovery.
+      Furthermore, SkillTracer synthesizes short-term traces with long-term historical evidence to construct a persistent skill graph, enabling failure patterns to drive continual refinement across episodes.
+    </p>
+    <p>
+      Evaluated on challenging long-horizon benchmarks, SkillTracer achieves a 17.7% average improvement in success rate over strong baselines, with gains of up to 56.3% in cross-domain settings, demonstrating that structural attribution and skill repair are critical for reliable long-horizon web interaction.
     </p>
   </section>
 
