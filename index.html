@@ -270,6 +270,30 @@
       border-radius: 5px;
       font-size: 0.92em;
     }
+    .experiment-panel {
+      border-top: 5px solid var(--primary);
+    }
+    
+    .result-image {
+      margin: 22px 0 24px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 10px 24px rgba(31, 41, 55, 0.06);
+    }
+    
+    .result-image img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+    
+    .result-text {
+      font-size: 17px;
+      color: #374151;
+      margin-bottom: 0;
+    }
 
     .grid {
       display: grid;
@@ -484,13 +508,32 @@
   </section>
 
   <section id="experiments">
-    <h2>Experiments</h2>
-    <p>
-      We evaluate SkillTracer on long-horizon web automation tasks across WebArena domains. The results show that structured skill
-      representations improve robustness, repairability, and execution stability, especially in tasks requiring precise tool understanding
-      and state verification.
+  <h2>Experiments</h2>
+
+  <div class="wide-panel experiment-panel">
+    <h3>Empirical Results</h3>
+
+    <p class="panel-intro">
+      We evaluate SkillTracer on challenging long-horizon web tasks based on the WebArena benchmark.
+      Our experiments cover multiple domains with diverse interaction patterns, including shopping,
+      administration, discussion forums, software repositories, map-based search, and cross-domain tasks.
+      We compare SkillTracer against strong skill-based and prompting-based baselines, and examine whether
+      structural failure attribution and localized repair improve robustness in long-horizon execution.
     </p>
-  </section>
+
+    <div class="result-image">
+      <img src="result.png" alt="Experimental results of SkillTracer">
+    </div>
+
+    <p class="result-text">
+      The results show that SkillTracer consistently improves task success across challenging web domains.
+      Compared with strong baselines, SkillTracer achieves a 17.7% average improvement in success rate,
+      with gains of up to 56.3% in cross-domain settings. These improvements indicate that representing skills
+      as attributed plan graphs, together with node-level failure attribution and localized repair,
+      substantially enhances execution stability, adaptive recovery, and cross-domain generalization in long-horizon web interaction.
+    </p>
+  </div>
+</section>>
 
   <section id="bibtex">
     <h2>BibTeX</h2>
