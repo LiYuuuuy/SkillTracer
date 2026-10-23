@@ -156,20 +156,6 @@ corresponding `OPENROUTER_*` settings when switching providers.
 
 ## Execution, verification and repair
 
-```mermaid
-flowchart LR
-  A[Choose subgoal] --> B[Retrieve and plan]
-  B --> C[Enforce declared skill reuse]
-  C --> D[Bind and execute actions]
-  D --> E[Check page evidence and assess]
-  E -->|verified progress| F[Commit progress and learn]
-  E -->|failure| G[Attribute and repair]
-  G --> H[Roll back and replay verified prefix]
-  H --> B
-  F -->|more work| A
-  F -->|done| I[Evaluate and persist]
-```
-
 With a matching skill, planner declares `use_skill` and the original
 `skill_start_node_id`. Reused node content and internal edges must remain
 unchanged. On a mismatch, the runtime appends the skill suffix starting
