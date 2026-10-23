@@ -1,0 +1,8 @@
+WebArena task definitions
+Source: https://github.com/web-arena-x/webarena
+Task configuration: config_files/test.raw.json
+License: Apache License, Version 2.0 (see LICENSE in this directory).
+
+The configuration is distributed as individual task JSON files. Website
+origins are resolved at runtime through SkillTracer's WA_* configuration.
+Names and account examples in these files originate from the benchmark.

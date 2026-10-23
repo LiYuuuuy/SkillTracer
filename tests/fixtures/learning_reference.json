@@ -1,0 +1,1113 @@
+{
+  "reference_sources": {
+    "workflow.py": {
+      "sha256": "a82f19401f7d67a55a676b4895f4cefb55498c74f71290955c6f66dcb0a53cf9"
+    },
+    "memory/memory.py": {
+      "sha256": "7241239313a5f2d78ead8e736ffeb46c0732ca3753bd7ad746622ac4a9e87507"
+    }
+  },
+  "learning_gate_lines": [
+    745,
+    778
+  ],
+  "learning_gates": [
+    {
+      "nodes": 0,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": false,
+      "write_components": true
+    },
+    {
+      "nodes": 0,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": false,
+      "write_components": true
+    },
+    {
+      "nodes": 0,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 0,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": false,
+      "write_components": true
+    },
+    {
+      "nodes": 0,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": false,
+      "write_components": true
+    },
+    {
+      "nodes": 0,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 0,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 0,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 0,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 1,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": false,
+      "write_components": true
+    },
+    {
+      "nodes": 1,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": false,
+      "write_components": true
+    },
+    {
+      "nodes": 1,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 1,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": false,
+      "write_components": true
+    },
+    {
+      "nodes": 1,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": false,
+      "write_components": true
+    },
+    {
+      "nodes": 1,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 1,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 1,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 1,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 2,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": true,
+      "write_components": true
+    },
+    {
+      "nodes": 2,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": true,
+      "write_components": true
+    },
+    {
+      "nodes": 2,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 2,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": true,
+      "write_components": true
+    },
+    {
+      "nodes": 2,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": true,
+      "write_components": true
+    },
+    {
+      "nodes": 2,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 2,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 2,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 2,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 3,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": true,
+      "write_components": true
+    },
+    {
+      "nodes": 3,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": true,
+      "write_components": true
+    },
+    {
+      "nodes": 3,
+      "steps": 0,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 3,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": true,
+      "write_components": true
+    },
+    {
+      "nodes": 3,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": true,
+      "write_components": true
+    },
+    {
+      "nodes": 3,
+      "steps": 3,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 3,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 1,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 3,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 20,
+      "induce_skill": false,
+      "write_components": false
+    },
+    {
+      "nodes": 3,
+      "steps": 4,
+      "maximum_steps": 4,
+      "planning_rounds": 21,
+      "induce_skill": false,
+      "write_components": false
+    }
+  ],
+  "memory_transitions": [
+    {
+      "label": "first_failure",
+      "progressed_nodes": 0,
+      "freeze_previous": false,
+      "is_error": true,
+      "failed_node": {
+        "node_id": "n1",
+        "purpose": "navigation",
+        "component_type": "link",
+        "action": "click(target_id)",
+        "description": "first_failure"
+      },
+      "repair_tool": {
+        "tool": "REPLACE_ACTION",
+        "arguments": {
+          "node_id": "n1",
+          "new_action": "click(alternate_id)"
+        }
+      },
+      "insight": "first_failure",
+      "error_evidence": {
+        "evidence": "first_failure"
+      },
+      "expected_short_term": [
+        {
+          "original_failed_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "first_failure"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "usable": false,
+          "editable": true
+        }
+      ],
+      "expected_long_term": []
+    },
+    {
+      "label": "repeated_failure",
+      "progressed_nodes": 0,
+      "freeze_previous": false,
+      "is_error": true,
+      "failed_node": {
+        "node_id": "n1",
+        "purpose": "navigation",
+        "component_type": "link",
+        "action": "click(target_id)",
+        "description": "repeated_failure"
+      },
+      "repair_tool": {
+        "tool": "REPLACE_ACTION",
+        "arguments": {
+          "node_id": "n1",
+          "new_action": "click(alternate_id)"
+        }
+      },
+      "insight": "repeated_failure",
+      "error_evidence": {
+        "evidence": "repeated_failure"
+      },
+      "expected_short_term": [
+        {
+          "original_failed_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_failure"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "usable": true,
+          "editable": true
+        }
+      ],
+      "expected_long_term": []
+    },
+    {
+      "label": "progress_to_later_failure",
+      "progressed_nodes": 1,
+      "freeze_previous": false,
+      "is_error": true,
+      "failed_node": {
+        "node_id": "n2",
+        "purpose": "navigation",
+        "component_type": "link",
+        "action": "click(target_id)",
+        "description": "progress_to_later_failure"
+      },
+      "repair_tool": {
+        "tool": "REPLACE_ACTION",
+        "arguments": {
+          "node_id": "n2",
+          "new_action": "click(alternate_id)"
+        }
+      },
+      "insight": "progress_to_later_failure",
+      "error_evidence": {
+        "evidence": "progress_to_later_failure"
+      },
+      "expected_short_term": [
+        {
+          "original_failed_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_failure"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "usable": true,
+          "editable": false
+        },
+        {
+          "original_failed_node": {
+            "node_id": "n2",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "progress_to_later_failure"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n2",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "progress_to_later_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "progress_to_later_failure"
+          },
+          "usable": false,
+          "editable": true
+        }
+      ],
+      "expected_long_term": [
+        {
+          "task": "Reference task",
+          "subgoal": "Reference subgoal",
+          "original_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_failure"
+          },
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "stuck_repair": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_failure"
+            }
+          ],
+          "success_repair": {
+            "repair_tool": {
+              "tool": "REPLACE_ACTION",
+              "arguments": {
+                "node_id": "n2",
+                "new_action": "click(alternate_id)"
+              }
+            },
+            "insight": "progress_to_later_failure"
+          }
+        }
+      ]
+    },
+    {
+      "label": "repeated_later_failure",
+      "progressed_nodes": 0,
+      "freeze_previous": false,
+      "is_error": true,
+      "failed_node": {
+        "node_id": "n2",
+        "purpose": "navigation",
+        "component_type": "link",
+        "action": "click(target_id)",
+        "description": "repeated_later_failure"
+      },
+      "repair_tool": {
+        "tool": "REPLACE_ACTION",
+        "arguments": {
+          "node_id": "n2",
+          "new_action": "click(alternate_id)"
+        }
+      },
+      "insight": "repeated_later_failure",
+      "error_evidence": {
+        "evidence": "repeated_later_failure"
+      },
+      "expected_short_term": [
+        {
+          "original_failed_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_failure"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "usable": true,
+          "editable": false
+        },
+        {
+          "original_failed_node": {
+            "node_id": "n2",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_later_failure"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n2",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "progress_to_later_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n2",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_later_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "progress_to_later_failure"
+          },
+          "usable": true,
+          "editable": true
+        }
+      ],
+      "expected_long_term": [
+        {
+          "task": "Reference task",
+          "subgoal": "Reference subgoal",
+          "original_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_failure"
+          },
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "stuck_repair": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_failure"
+            }
+          ],
+          "success_repair": {
+            "repair_tool": {
+              "tool": "REPLACE_ACTION",
+              "arguments": {
+                "node_id": "n2",
+                "new_action": "click(alternate_id)"
+              }
+            },
+            "insight": "progress_to_later_failure"
+          }
+        }
+      ]
+    },
+    {
+      "label": "frozen_entry_without_progress",
+      "progressed_nodes": 0,
+      "freeze_previous": true,
+      "is_error": true,
+      "failed_node": {
+        "node_id": "n3",
+        "purpose": "navigation",
+        "component_type": "link",
+        "action": "click(target_id)",
+        "description": "frozen_entry_without_progress"
+      },
+      "repair_tool": {
+        "tool": "REPLACE_ACTION",
+        "arguments": {
+          "node_id": "n3",
+          "new_action": "click(alternate_id)"
+        }
+      },
+      "insight": "frozen_entry_without_progress",
+      "error_evidence": {
+        "evidence": "frozen_entry_without_progress"
+      },
+      "expected_short_term": [
+        {
+          "original_failed_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_failure"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "usable": true,
+          "editable": false
+        },
+        {
+          "original_failed_node": {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "frozen_entry_without_progress"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n2",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "progress_to_later_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n2",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_later_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "progress_to_later_failure"
+          },
+          "usable": true,
+          "editable": false
+        },
+        {
+          "original_failed_node": {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "frozen_entry_without_progress"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n3",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "frozen_entry_without_progress"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "frozen_entry_without_progress"
+          },
+          "usable": false,
+          "editable": true
+        }
+      ],
+      "expected_long_term": [
+        {
+          "task": "Reference task",
+          "subgoal": "Reference subgoal",
+          "original_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_failure"
+          },
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "stuck_repair": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_failure"
+            }
+          ],
+          "success_repair": {
+            "repair_tool": {
+              "tool": "REPLACE_ACTION",
+              "arguments": {
+                "node_id": "n2",
+                "new_action": "click(alternate_id)"
+              }
+            },
+            "insight": "progress_to_later_failure"
+          }
+        }
+      ]
+    },
+    {
+      "label": "successful_execution",
+      "progressed_nodes": 2,
+      "freeze_previous": false,
+      "is_error": false,
+      "failed_node": {
+        "node_id": "n3",
+        "purpose": "navigation",
+        "component_type": "link",
+        "action": "click(target_id)",
+        "description": "successful_execution"
+      },
+      "repair_tool": {
+        "tool": "REPLACE_ACTION",
+        "arguments": {
+          "node_id": "n3",
+          "new_action": "click(alternate_id)"
+        }
+      },
+      "insight": "successful_execution",
+      "error_evidence": {
+        "evidence": "successful_execution"
+      },
+      "expected_short_term": [
+        {
+          "original_failed_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_failure"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "usable": true,
+          "editable": false
+        },
+        {
+          "original_failed_node": {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "frozen_entry_without_progress"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n2",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "progress_to_later_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n2",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_later_failure"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "progress_to_later_failure"
+          },
+          "usable": true,
+          "editable": false
+        },
+        {
+          "original_failed_node": {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "frozen_entry_without_progress"
+          },
+          "repair_tools": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n3",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "frozen_entry_without_progress"
+            }
+          ],
+          "error_evidence": {
+            "evidence": "frozen_entry_without_progress"
+          },
+          "usable": false,
+          "editable": true
+        }
+      ],
+      "expected_long_term": [
+        {
+          "task": "Reference task",
+          "subgoal": "Reference subgoal",
+          "original_node": {
+            "node_id": "n1",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "repeated_failure"
+          },
+          "error_evidence": {
+            "evidence": "first_failure"
+          },
+          "stuck_repair": [
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "first_failure"
+            },
+            {
+              "repair_tool": {
+                "tool": "REPLACE_ACTION",
+                "arguments": {
+                  "node_id": "n1",
+                  "new_action": "click(alternate_id)"
+                }
+              },
+              "insight": "repeated_failure"
+            }
+          ],
+          "success_repair": {
+            "repair_tool": {
+              "tool": "REPLACE_ACTION",
+              "arguments": {
+                "node_id": "n2",
+                "new_action": "click(alternate_id)"
+              }
+            },
+            "insight": "progress_to_later_failure"
+          }
+        }
+      ]
+    }
+  ],
+  "subgoal_memory_updates": [
+    {
+      "query": "Reference task",
+      "subgoals": [
+        "Open target"
+      ],
+      "guidances": [
+        [
+          "Null",
+          null,
+          ""
+        ]
+      ],
+      "expected": []
+    },
+    {
+      "query": "Reference task",
+      "subgoals": [
+        "Open target"
+      ],
+      "guidances": [
+        [
+          "Find the exact item.",
+          "Retain its name."
+        ]
+      ],
+      "expected": [
+        {
+          "task": "Reference task",
+          "subgoal_guidance": [
+            {
+              "subgoal": "Open target",
+              "guidance": "Find the exact item. Retain its name."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query": "Reference task",
+      "subgoals": [
+        "Open target",
+        "Read target"
+      ],
+      "guidances": [
+        [
+          "Use the exact name."
+        ],
+        [
+          "Null"
+        ]
+      ],
+      "expected": [
+        {
+          "task": "Reference task",
+          "subgoal_guidance": [
+            {
+              "subgoal": "Open target",
+              "guidance": "Use the exact name."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

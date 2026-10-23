@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.venv/
+.ruff_cache/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+*:Zone.Identifier
+__MACOSX/
+.auth/
+.local/
+autoeval_results/
+results/
+axtree_check.txt
+*.log

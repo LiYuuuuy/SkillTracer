@@ -1,0 +1,2500 @@
+{
+  "reference_sources": {
+    "util/check_point.py": "01ddb23f0ab96d91a3edc1b3e1666d1e4e79c5ffbbfa1b7ee99ac18365104e1a",
+    "plan.py": "45cecf2a9e6dc5dcb49ea786650c08dec461b51eced6ea6e83552560a6b308d9",
+    "action.py": "75327913892a583f7c85308003dbe61915e92c0c827aef6a2478d0615875a3c3",
+    "util/util.py": "3c0ff2a95122a8836a954adaf53570a8de0c571046a93562bf70e7c417feb370",
+    "agent/summarizer.py": "239d24eab6090ef36caf2f1466f024f2de98341bc083e8e4c5e8d47d0b92c744"
+  },
+  "rollback": [
+    {
+      "initial_url": null,
+      "operations": [
+        {
+          "method": "update_from_success_trace",
+          "args": [
+            [
+              "http://test/a",
+              "http://test/a"
+            ],
+            [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/a",
+            "action_buffer": [
+              "fill('10', 'value')",
+              "click('11')"
+            ],
+            "subgoal_url_snapshot": null,
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "snapshot_subgoal_start",
+          "args": [
+            "http://test/a"
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/a",
+            "action_buffer": [
+              "fill('10', 'value')",
+              "click('11')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "build_rollback_actions",
+          "args": [
+            2,
+            [
+              "click('20')",
+              "fill('21', 'next')",
+              "click('22')"
+            ]
+          ],
+          "result": [
+            "goto('http://test/a')",
+            "fill('10', 'value')",
+            "click('11')",
+            "click('20')",
+            "fill('21', 'next')"
+          ],
+          "state": {
+            "target_url": "http://test/a",
+            "action_buffer": [
+              "fill('10', 'value')",
+              "click('11')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "update_from_success_trace",
+          "args": [
+            [
+              "http://test/a",
+              "http://test/b",
+              null
+            ],
+            [
+              "click('30')",
+              "fill('31', 'other')",
+              "click('32')"
+            ]
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "build_rollback_actions",
+          "args": [
+            0,
+            []
+          ],
+          "result": [
+            "goto('http://test/b')",
+            "fill('31', 'other')",
+            "click('32')"
+          ],
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "snapshot_subgoal_start",
+          "args": [
+            "http://test/c"
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "build_subgoal_rollback_actions",
+          "args": [],
+          "result": [
+            "goto('http://test/c')"
+          ],
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "update_from_success_trace",
+          "args": [
+            [
+              null,
+              "http://test/d"
+            ],
+            [
+              "click('40')"
+            ]
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')",
+              "click('40')"
+            ],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "reset_to_subgoal",
+          "args": [],
+          "result": null,
+          "state": {
+            "target_url": "http://test/c",
+            "action_buffer": [],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "build_rollback_actions",
+          "args": [
+            1,
+            [
+              "press('50', 'Enter')"
+            ]
+          ],
+          "result": [
+            "goto('http://test/c')",
+            "press('50', 'Enter')"
+          ],
+          "state": {
+            "target_url": "http://test/c",
+            "action_buffer": [],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        }
+      ]
+    },
+    {
+      "initial_url": "http://test/a",
+      "operations": [
+        {
+          "method": "update_from_success_trace",
+          "args": [
+            [
+              "http://test/a",
+              "http://test/a"
+            ],
+            [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/a",
+            "action_buffer": [
+              "fill('10', 'value')",
+              "click('11')"
+            ],
+            "subgoal_url_snapshot": null,
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "snapshot_subgoal_start",
+          "args": [
+            "http://test/a"
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/a",
+            "action_buffer": [
+              "fill('10', 'value')",
+              "click('11')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "build_rollback_actions",
+          "args": [
+            2,
+            [
+              "click('20')",
+              "fill('21', 'next')",
+              "click('22')"
+            ]
+          ],
+          "result": [
+            "goto('http://test/a')",
+            "fill('10', 'value')",
+            "click('11')",
+            "click('20')",
+            "fill('21', 'next')"
+          ],
+          "state": {
+            "target_url": "http://test/a",
+            "action_buffer": [
+              "fill('10', 'value')",
+              "click('11')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "update_from_success_trace",
+          "args": [
+            [
+              "http://test/a",
+              "http://test/b",
+              null
+            ],
+            [
+              "click('30')",
+              "fill('31', 'other')",
+              "click('32')"
+            ]
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "build_rollback_actions",
+          "args": [
+            0,
+            []
+          ],
+          "result": [
+            "goto('http://test/b')",
+            "fill('31', 'other')",
+            "click('32')"
+          ],
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "snapshot_subgoal_start",
+          "args": [
+            "http://test/c"
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "build_subgoal_rollback_actions",
+          "args": [],
+          "result": [
+            "goto('http://test/c')"
+          ],
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "update_from_success_trace",
+          "args": [
+            [
+              null,
+              "http://test/d"
+            ],
+            [
+              "click('40')"
+            ]
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')",
+              "click('40')"
+            ],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "reset_to_subgoal",
+          "args": [],
+          "result": null,
+          "state": {
+            "target_url": "http://test/c",
+            "action_buffer": [],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "build_rollback_actions",
+          "args": [
+            1,
+            [
+              "press('50', 'Enter')"
+            ]
+          ],
+          "result": [
+            "goto('http://test/c')",
+            "press('50', 'Enter')"
+          ],
+          "state": {
+            "target_url": "http://test/c",
+            "action_buffer": [],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        }
+      ]
+    },
+    {
+      "initial_url": "http://test/elsewhere",
+      "operations": [
+        {
+          "method": "update_from_success_trace",
+          "args": [
+            [
+              "http://test/a",
+              "http://test/a"
+            ],
+            [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/a",
+            "action_buffer": [
+              "fill('10', 'value')",
+              "click('11')"
+            ],
+            "subgoal_url_snapshot": null,
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "snapshot_subgoal_start",
+          "args": [
+            "http://test/a"
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/a",
+            "action_buffer": [
+              "fill('10', 'value')",
+              "click('11')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "build_rollback_actions",
+          "args": [
+            2,
+            [
+              "click('20')",
+              "fill('21', 'next')",
+              "click('22')"
+            ]
+          ],
+          "result": [
+            "goto('http://test/a')",
+            "fill('10', 'value')",
+            "click('11')",
+            "click('20')",
+            "fill('21', 'next')"
+          ],
+          "state": {
+            "target_url": "http://test/a",
+            "action_buffer": [
+              "fill('10', 'value')",
+              "click('11')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "update_from_success_trace",
+          "args": [
+            [
+              "http://test/a",
+              "http://test/b",
+              null
+            ],
+            [
+              "click('30')",
+              "fill('31', 'other')",
+              "click('32')"
+            ]
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "build_rollback_actions",
+          "args": [
+            0,
+            []
+          ],
+          "result": [
+            "goto('http://test/b')",
+            "fill('31', 'other')",
+            "click('32')"
+          ],
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/a",
+            "subgoal_action_buffer_snapshot": [
+              "fill('10', 'value')",
+              "click('11')"
+            ]
+          }
+        },
+        {
+          "method": "snapshot_subgoal_start",
+          "args": [
+            "http://test/c"
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "build_subgoal_rollback_actions",
+          "args": [],
+          "result": [
+            "goto('http://test/c')"
+          ],
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')"
+            ],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "update_from_success_trace",
+          "args": [
+            [
+              null,
+              "http://test/d"
+            ],
+            [
+              "click('40')"
+            ]
+          ],
+          "result": null,
+          "state": {
+            "target_url": "http://test/b",
+            "action_buffer": [
+              "fill('31', 'other')",
+              "click('32')",
+              "click('40')"
+            ],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "reset_to_subgoal",
+          "args": [],
+          "result": null,
+          "state": {
+            "target_url": "http://test/c",
+            "action_buffer": [],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        },
+        {
+          "method": "build_rollback_actions",
+          "args": [
+            1,
+            [
+              "press('50', 'Enter')"
+            ]
+          ],
+          "result": [
+            "goto('http://test/c')",
+            "press('50', 'Enter')"
+          ],
+          "state": {
+            "target_url": "http://test/c",
+            "action_buffer": [],
+            "subgoal_url_snapshot": "http://test/c",
+            "subgoal_action_buffer_snapshot": []
+          }
+        }
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "plan": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n12",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 12.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          },
+          {
+            "from": "n8",
+            "to": "n12"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "executor": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3."
+          },
+          {
+            "node_id": "n8",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8."
+          },
+          {
+            "node_id": "n12",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 12."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          },
+          {
+            "from": "n8",
+            "to": "n12"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "slices": [
+        {
+          "node_id": "n3",
+          "before": {
+            "nodes": [],
+            "edges": [],
+            "next_step_decision": {
+              "should_plan_next": true
+            }
+          },
+          "after": {
+            "nodes": [
+              {
+                "node_id": "n3",
+                "purpose": "navigation",
+                "component_type": "link",
+                "action": "click(target_id)",
+                "description": "Open target 3.",
+                "private_debug": "exclude from executor"
+              },
+              {
+                "node_id": "n8",
+                "purpose": "navigation",
+                "component_type": "link",
+                "action": "click(target_id)",
+                "description": "Open target 8.",
+                "private_debug": "exclude from executor"
+              },
+              {
+                "node_id": "n12",
+                "purpose": "navigation",
+                "component_type": "link",
+                "action": "click(target_id)",
+                "description": "Open target 12.",
+                "private_debug": "exclude from executor"
+              }
+            ],
+            "edges": [
+              {
+                "from": "n3",
+                "to": "n8",
+                "precondition": "exists_content('visible')"
+              },
+              {
+                "from": "n8",
+                "to": "n12"
+              }
+            ],
+            "next_step_decision": {
+              "should_plan_next": true
+            }
+          }
+        },
+        {
+          "node_id": "n8",
+          "before": {
+            "nodes": [
+              {
+                "node_id": "n3",
+                "purpose": "navigation",
+                "component_type": "link",
+                "action": "click(target_id)",
+                "description": "Open target 3.",
+                "private_debug": "exclude from executor"
+              }
+            ],
+            "edges": [],
+            "next_step_decision": {
+              "should_plan_next": true
+            }
+          },
+          "after": {
+            "nodes": [
+              {
+                "node_id": "n8",
+                "purpose": "navigation",
+                "component_type": "link",
+                "action": "click(target_id)",
+                "description": "Open target 8.",
+                "private_debug": "exclude from executor"
+              },
+              {
+                "node_id": "n12",
+                "purpose": "navigation",
+                "component_type": "link",
+                "action": "click(target_id)",
+                "description": "Open target 12.",
+                "private_debug": "exclude from executor"
+              }
+            ],
+            "edges": [
+              {
+                "from": "n8",
+                "to": "n12"
+              }
+            ],
+            "next_step_decision": {
+              "should_plan_next": true
+            }
+          }
+        },
+        {
+          "node_id": "n12",
+          "before": {
+            "nodes": [
+              {
+                "node_id": "n3",
+                "purpose": "navigation",
+                "component_type": "link",
+                "action": "click(target_id)",
+                "description": "Open target 3.",
+                "private_debug": "exclude from executor"
+              },
+              {
+                "node_id": "n8",
+                "purpose": "navigation",
+                "component_type": "link",
+                "action": "click(target_id)",
+                "description": "Open target 8.",
+                "private_debug": "exclude from executor"
+              }
+            ],
+            "edges": [
+              {
+                "from": "n3",
+                "to": "n8",
+                "precondition": "exists_content('visible')"
+              }
+            ],
+            "next_step_decision": {
+              "should_plan_next": true
+            }
+          },
+          "after": {
+            "nodes": [
+              {
+                "node_id": "n12",
+                "purpose": "navigation",
+                "component_type": "link",
+                "action": "click(target_id)",
+                "description": "Open target 12.",
+                "private_debug": "exclude from executor"
+              }
+            ],
+            "edges": [],
+            "next_step_decision": {
+              "should_plan_next": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "plan": {
+        "nodes": [
+          {
+            "node_id": "n9",
+            "action": "click(target_id)"
+          }
+        ],
+        "edges": []
+      },
+      "executor": {
+        "nodes": [
+          {
+            "node_id": "n9",
+            "component_type": "",
+            "action": "click(target_id)",
+            "description": ""
+          }
+        ],
+        "edges": [],
+        "next_step_decision": {
+          "should_plan_next": true
+        }
+      },
+      "slices": [
+        {
+          "node_id": "n9",
+          "before": {
+            "nodes": [],
+            "edges": [],
+            "next_step_decision": {
+              "should_plan_next": true
+            }
+          },
+          "after": {
+            "nodes": [
+              {
+                "node_id": "n9",
+                "action": "click(target_id)"
+              }
+            ],
+            "edges": [],
+            "next_step_decision": {
+              "should_plan_next": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "plan": {
+        "nodes": [],
+        "edges": [],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "executor": {
+        "nodes": [],
+        "edges": [],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "slices": []
+    }
+  ],
+  "concatenation": [
+    {
+      "left": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [],
+        "next_step_decision": {
+          "should_plan_next": true
+        }
+      },
+      "right": {
+        "nodes": [
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "expected": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      }
+    },
+    {
+      "left": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n12",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 12.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          },
+          {
+            "from": "n8",
+            "to": "n12"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "right": {
+        "nodes": [],
+        "edges": []
+      },
+      "expected": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n12",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 12.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          },
+          {
+            "from": "n8",
+            "to": "n12"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      }
+    },
+    {
+      "left": {
+        "nodes": [],
+        "edges": []
+      },
+      "right": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n12",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 12.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          },
+          {
+            "from": "n8",
+            "to": "n12"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "expected": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n12",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 12.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          },
+          {
+            "from": "n8",
+            "to": "n12"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      }
+    }
+  ],
+  "trajectories": [
+    {
+      "plan": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n12",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 12.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          },
+          {
+            "from": "n8",
+            "to": "n12"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "actions": [],
+      "deltas": [],
+      "node_ids": [],
+      "trajectory_text": "[AXTREE_0]\n[10] Start",
+      "checkpoint_text": "c0-->n3-->c1-->n8-->c2-->n12-->c3"
+    },
+    {
+      "plan": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n12",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 12.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          },
+          {
+            "from": "n8",
+            "to": "n12"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "actions": [
+        "click('0')"
+      ],
+      "deltas": [
+        "[30] Result 0"
+      ],
+      "node_ids": [
+        "n3"
+      ],
+      "trajectory_text": "[AXTREE_0]\n[10] Start\n[NODE_n3 | ACTION_0]\nclick('0')\n[ΔAXTREE_1]\n[30] Result 0",
+      "checkpoint_text": "c0-->n3-->c1-->n8-->c2-->n12-->c3"
+    },
+    {
+      "plan": {
+        "nodes": [
+          {
+            "node_id": "n3",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 3.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n8",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 8.",
+            "private_debug": "exclude from executor"
+          },
+          {
+            "node_id": "n12",
+            "purpose": "navigation",
+            "component_type": "link",
+            "action": "click(target_id)",
+            "description": "Open target 12.",
+            "private_debug": "exclude from executor"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n3",
+            "to": "n8",
+            "precondition": "exists_content('visible')"
+          },
+          {
+            "from": "n8",
+            "to": "n12"
+          }
+        ],
+        "next_step_decision": {
+          "should_plan_next": false
+        }
+      },
+      "actions": [
+        "click('0')",
+        "click('1')"
+      ],
+      "deltas": [
+        "[30] Result 0",
+        "[30] Result 1"
+      ],
+      "node_ids": [
+        "n3",
+        "n12"
+      ],
+      "trajectory_text": "[AXTREE_0]\n[10] Start\n[NODE_n3 | ACTION_0]\nclick('0')\n[ΔAXTREE_1]\n[30] Result 0\n[NODE_n12 | ACTION_1]\nclick('1')\n[ΔAXTREE_2]\n[30] Result 1",
+      "checkpoint_text": "c0-->n3-->c1-->n8-->c2-->n12-->c3"
+    }
+  ],
+  "repairs": [
+    {
+      "text": "{\"error_node\": \"n8\", \"error_type\": \"grounding\", \"error_evidence\": {\"evidence\": \"Observed mismatch\", \"summary\": \"Wrong target\"}, \"repair_signal\": {\"tool\": \"REPLACE_PURPOSE\", \"arguments\": {\"node_id\": \"n8\", \"new_purpose\": \"corrected_value\"}}, \"insight\": \"Ground the target.\", \"subgoal_guidance\": \"Clarify the target.\"}",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_PURPOSE",
+          "arguments": {
+            "node_id": "n8",
+            "new_purpose": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "```json\n{\"error_node\": \"n8\", \"error_type\": \"grounding\", \"error_evidence\": {\"evidence\": \"Observed mismatch\", \"summary\": \"Wrong target\"}, \"repair_signal\": {\"tool\": \"REPLACE_PURPOSE\", \"arguments\": {\"node_id\": \"n8\", \"new_purpose\": \"corrected_value\"}}, \"insight\": \"Ground the target.\", \"subgoal_guidance\": \"Clarify the target.\"}\n```",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_PURPOSE",
+          "arguments": {
+            "node_id": "n8",
+            "new_purpose": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "'''summary\nerror_node: n8\nerror_type: grounding\nerror_evidence\nevidence: Observed mismatch\nsummary: Wrong target\nrepair_tool: REPLACE_PURPOSE\narguments:\nnode_id: n8\nnew_purpose: corrected_value\ninsight: Ground the target.\nsubgoal_guidance: Clarify the target.\n'''",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_PURPOSE",
+          "arguments": {
+            "node_id": "n8",
+            "new_purpose": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "error_node: n8\nrepair_signal: REPLACE_PURPOSE\narguments:\nnode_id: n8\nnew_purpose: corrected_value\ninsight:\nsubgoal_guidance: Null",
+      "expected": {
+        "error_node": "n8",
+        "error_type": null,
+        "error_evidence": {
+          "evidence": null,
+          "summary": null
+        },
+        "repair_signal": {
+          "tool": "REPLACE_PURPOSE",
+          "arguments": {
+            "node_id": "n8",
+            "new_purpose": "corrected_value"
+          }
+        },
+        "insight": null
+      },
+      "guidance": "Null"
+    },
+    {
+      "text": "{\"error_node\": \"n8\", \"error_type\": \"grounding\", \"error_evidence\": {\"evidence\": \"Observed mismatch\", \"summary\": \"Wrong target\"}, \"repair_signal\": {\"tool\": \"REPLACE_COMPONENT_TYPE\", \"arguments\": {\"node_id\": \"n8\", \"new_component_type\": \"corrected_value\"}}, \"insight\": \"Ground the target.\", \"subgoal_guidance\": \"Clarify the target.\"}",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_COMPONENT_TYPE",
+          "arguments": {
+            "node_id": "n8",
+            "new_component_type": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "```json\n{\"error_node\": \"n8\", \"error_type\": \"grounding\", \"error_evidence\": {\"evidence\": \"Observed mismatch\", \"summary\": \"Wrong target\"}, \"repair_signal\": {\"tool\": \"REPLACE_COMPONENT_TYPE\", \"arguments\": {\"node_id\": \"n8\", \"new_component_type\": \"corrected_value\"}}, \"insight\": \"Ground the target.\", \"subgoal_guidance\": \"Clarify the target.\"}\n```",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_COMPONENT_TYPE",
+          "arguments": {
+            "node_id": "n8",
+            "new_component_type": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "'''summary\nerror_node: n8\nerror_type: grounding\nerror_evidence\nevidence: Observed mismatch\nsummary: Wrong target\nrepair_tool: REPLACE_COMPONENT_TYPE\narguments:\nnode_id: n8\nnew_component_type: corrected_value\ninsight: Ground the target.\nsubgoal_guidance: Clarify the target.\n'''",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_COMPONENT_TYPE",
+          "arguments": {
+            "node_id": "n8",
+            "new_component_type": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "error_node: n8\nrepair_signal: REPLACE_COMPONENT_TYPE\narguments:\nnode_id: n8\nnew_component_type: corrected_value\ninsight:\nsubgoal_guidance: Null",
+      "expected": {
+        "error_node": "n8",
+        "error_type": null,
+        "error_evidence": {
+          "evidence": null,
+          "summary": null
+        },
+        "repair_signal": {
+          "tool": "REPLACE_COMPONENT_TYPE",
+          "arguments": {
+            "node_id": "n8",
+            "new_component_type": "corrected_value"
+          }
+        },
+        "insight": null
+      },
+      "guidance": "Null"
+    },
+    {
+      "text": "{\"error_node\": \"n8\", \"error_type\": \"grounding\", \"error_evidence\": {\"evidence\": \"Observed mismatch\", \"summary\": \"Wrong target\"}, \"repair_signal\": {\"tool\": \"REPLACE_ACTION\", \"arguments\": {\"node_id\": \"n8\", \"new_action\": \"corrected_value\"}}, \"insight\": \"Ground the target.\", \"subgoal_guidance\": \"Clarify the target.\"}",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_ACTION",
+          "arguments": {
+            "node_id": "n8",
+            "new_action": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "```json\n{\"error_node\": \"n8\", \"error_type\": \"grounding\", \"error_evidence\": {\"evidence\": \"Observed mismatch\", \"summary\": \"Wrong target\"}, \"repair_signal\": {\"tool\": \"REPLACE_ACTION\", \"arguments\": {\"node_id\": \"n8\", \"new_action\": \"corrected_value\"}}, \"insight\": \"Ground the target.\", \"subgoal_guidance\": \"Clarify the target.\"}\n```",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_ACTION",
+          "arguments": {
+            "node_id": "n8",
+            "new_action": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "'''summary\nerror_node: n8\nerror_type: grounding\nerror_evidence\nevidence: Observed mismatch\nsummary: Wrong target\nrepair_tool: REPLACE_ACTION\narguments:\nnode_id: n8\nnew_action: corrected_value\ninsight: Ground the target.\nsubgoal_guidance: Clarify the target.\n'''",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_ACTION",
+          "arguments": {
+            "node_id": "n8",
+            "new_action": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "error_node: n8\nrepair_signal: REPLACE_ACTION\narguments:\nnode_id: n8\nnew_action: corrected_value\ninsight:\nsubgoal_guidance: Null",
+      "expected": {
+        "error_node": "n8",
+        "error_type": null,
+        "error_evidence": {
+          "evidence": null,
+          "summary": null
+        },
+        "repair_signal": {
+          "tool": "REPLACE_ACTION",
+          "arguments": {
+            "node_id": "n8",
+            "new_action": "corrected_value"
+          }
+        },
+        "insight": null
+      },
+      "guidance": "Null"
+    },
+    {
+      "text": "{\"error_node\": \"n8\", \"error_type\": \"grounding\", \"error_evidence\": {\"evidence\": \"Observed mismatch\", \"summary\": \"Wrong target\"}, \"repair_signal\": {\"tool\": \"REFINE_DESCRIPTION\", \"arguments\": {\"node_id\": \"n8\", \"new_description\": \"corrected_value\"}}, \"insight\": \"Ground the target.\", \"subgoal_guidance\": \"Clarify the target.\"}",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REFINE_DESCRIPTION",
+          "arguments": {
+            "node_id": "n8",
+            "new_description": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "```json\n{\"error_node\": \"n8\", \"error_type\": \"grounding\", \"error_evidence\": {\"evidence\": \"Observed mismatch\", \"summary\": \"Wrong target\"}, \"repair_signal\": {\"tool\": \"REFINE_DESCRIPTION\", \"arguments\": {\"node_id\": \"n8\", \"new_description\": \"corrected_value\"}}, \"insight\": \"Ground the target.\", \"subgoal_guidance\": \"Clarify the target.\"}\n```",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REFINE_DESCRIPTION",
+          "arguments": {
+            "node_id": "n8",
+            "new_description": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "'''summary\nerror_node: n8\nerror_type: grounding\nerror_evidence\nevidence: Observed mismatch\nsummary: Wrong target\nrepair_tool: REFINE_DESCRIPTION\narguments:\nnode_id: n8\nnew_description: corrected_value\ninsight: Ground the target.\nsubgoal_guidance: Clarify the target.\n'''",
+      "expected": {
+        "error_node": "n8",
+        "error_type": "grounding",
+        "error_evidence": {
+          "evidence": "Observed mismatch",
+          "summary": "Wrong target"
+        },
+        "repair_signal": {
+          "tool": "REFINE_DESCRIPTION",
+          "arguments": {
+            "node_id": "n8",
+            "new_description": "corrected_value"
+          }
+        },
+        "insight": "Ground the target."
+      },
+      "guidance": "Clarify the target."
+    },
+    {
+      "text": "error_node: n8\nrepair_signal: REFINE_DESCRIPTION\narguments:\nnode_id: n8\nnew_description: corrected_value\ninsight:\nsubgoal_guidance: Null",
+      "expected": {
+        "error_node": "n8",
+        "error_type": null,
+        "error_evidence": {
+          "evidence": null,
+          "summary": null
+        },
+        "repair_signal": {
+          "tool": "REFINE_DESCRIPTION",
+          "arguments": {
+            "node_id": "n8",
+            "new_description": "corrected_value"
+          }
+        },
+        "insight": null
+      },
+      "guidance": "Null"
+    },
+    {
+      "text": "'''summary\nerror_node: n8\nerror_evidence\nevidence: Observed payload {\"id\": 10}\nsummary: No target\nrepair_tool: REPLACE_ACTION\narguments:\nnode_id: n8\nnew_action: click(alternate_id)\ninsight: Use the visible element.\n'''",
+      "expected": {
+        "error_node": "n8",
+        "error_type": null,
+        "error_evidence": {
+          "evidence": "Observed payload {\"id\": 10}",
+          "summary": "No target"
+        },
+        "repair_signal": {
+          "tool": "REPLACE_ACTION",
+          "arguments": {
+            "node_id": "n8",
+            "new_action": "click(alternate_id)"
+          }
+        },
+        "insight": "Use the visible element."
+      },
+      "guidance": "Null"
+    }
+  ],
+  "judge_flags": [
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": false,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": false,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": false,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": false
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": false,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": false,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": false
+      },
+      "trigger_repair": true
+    },
+    {
+      "flags": {
+        "all_plan_nodes_executed": true,
+        "all_actions_executed_success": true,
+        "empty_execution": true,
+        "target_info_in_delta_axtree": true,
+        "target_info_in_actions_or_memory": true,
+        "direction_matches_subgoal": true
+      },
+      "trigger_repair": true
+    }
+  ],
+  "responses": [
+    {
+      "actions": [
+        "click('1')",
+        "send_msg_to_user(' First answer ')",
+        "send_msg_to_user('Second answer')"
+      ],
+      "expected": "First answer\nSecond answer"
+    },
+    {
+      "actions": [
+        null,
+        "send_msg_to_user('')",
+        "send_msg_to_user('Only answer')"
+      ],
+      "expected": "Only answer"
+    },
+    {
+      "actions": [
+        "report_infeasible('No target')",
+        "click('1')"
+      ],
+      "expected": ""
+    }
+  ],
+  "action_parsing": [
+    {
+      "text": "<plan components>:\n'''n3: fill('10', 'value')'''\n'''c: exists_content('Result') = true'''\n'''n8: memorize('Null')'''\n'''n12: memorize('20')'''\n<context>:\n[10] textbox 'Search'",
+      "browser_actions": [
+        "fill('10', 'value')"
+      ],
+      "browser_node_ids": [
+        "n3"
+      ],
+      "memory_actions": [
+        "memorize('Null')",
+        "memorize('20')"
+      ],
+      "memory_node_ids": [
+        "n8",
+        "n12"
+      ],
+      "full_actions": [
+        "fill('10', 'value')",
+        "memorize('Null')",
+        "memorize('20')"
+      ],
+      "full_node_ids": [
+        "n3",
+        "n8",
+        "n12"
+      ]
+    },
+    {
+      "text": "<plan components>:\n<context>:\n[10] textbox 'Search'",
+      "browser_actions": [],
+      "browser_node_ids": [],
+      "memory_actions": [],
+      "memory_node_ids": [],
+      "full_actions": [],
+      "full_node_ids": []
+    },
+    {
+      "text": "<plan components>:\n'''n8: click('10')'''\n'''n12: send_msg_to_user('Result')'''\n<context>:\n[10] link 'Result'",
+      "browser_actions": [
+        "click('10')",
+        "send_msg_to_user('Result')"
+      ],
+      "browser_node_ids": [
+        "n8",
+        "n12"
+      ],
+      "memory_actions": [],
+      "memory_node_ids": [],
+      "full_actions": [
+        "click('10')",
+        "send_msg_to_user('Result')"
+      ],
+      "full_node_ids": [
+        "n8",
+        "n12"
+      ]
+    }
+  ]
+}

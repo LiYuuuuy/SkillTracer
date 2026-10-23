@@ -1,0 +1,3 @@
+# Bundled browser environment and the SkillTracer package.
+-e ./browsergym/core
+-e .
